@@ -1,6 +1,6 @@
 # BMI Calculator
 
-A python command-line tool that calculates BMI (Body Mass Index) based on user input, classifies the result according to WHO standards, and displays a visual chart using Matplotlib.
+A python command-line tool that calculates BMI (Body Mass Index) for adults based on user input, classifies the result according to WHO standards, and displays a visual chart using Matplotlib.
 
 ## Features
 - Interactive input for weight and height
@@ -9,7 +9,6 @@ A python command-line tool that calculates BMI (Body Mass Index) based on user i
 
 ## Programming language and libraries
 - Python
-- Numpy
 - Matplotlib
 
 ## How to run
