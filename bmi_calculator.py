@@ -1,13 +1,14 @@
 # importing the necessary library for plotting
 import matplotlib.pyplot as plt
 
-# Creating function to calculate BMI
+
 def bmiCalculator(weight, height):
+    """Function to calculate BMI using the formula: BMI = weight (kg) / (height (m))^2"""
     bmi = weight / (height ** 2)
     return bmi
 
-# Creating function to determine BMI category based on calculated BMI
 def bmiCategory(bmi):
+    """Function to determine BMI category based on calculated BMI using standard BMI categories."""
     if bmi < 18.5:
         return "Underweight"
     elif 18.5 <= bmi < 25:
@@ -22,8 +23,8 @@ def bmiCategory(bmi):
         return "Obesity Class III"
     else: return "Invalid BMI"
 
-# Creating function to plot BMI categories and indicate user's BMI on the graph
 def plotBMICategories(bmi):
+    """Function to plot BMI categories using matplotlib, with different colors for each category and a vertical line indicating the user's BMI."""
     plt.axvspan(0, 18.5, 0.0, 1.0, color='blue', alpha=0.5, label='Underweight')
     plt.axvspan(18.5, 25, 0.0, 1.0, color='green', alpha=0.5, label='Normal weight')
     plt.axvspan(25, 30, 0.0, 1.0, color='yellow', alpha=0.5, label='Overweight')
@@ -36,8 +37,9 @@ def plotBMICategories(bmi):
     plt.legend()
 
 
-# Creating function to request user input for weight and height, with error handling for invalid inputs and ensuring that weight and height are positive numbers. Also, if height is entered in centimeters, it converts it to meters.
+
 def requestInput():
+    """Creating function to request user input for weight and height, with error handling for invalid inputs and ensuring that weight and height are positive numbers. Also, if height is entered in centimeters, it converts it to meters."""
     print("Welcome to the BMI Calculator!")
     try: 
         weight = float(input("Write your weight in kg: "))
@@ -54,8 +56,8 @@ def requestInput():
 
 
 
-# Creating and running main function to execute the BMI calculation, category determination, and plotting of BMI categories based on user input.
 def main():
+    """Creating main function to execute the BMI calculation, category determination, and plotting of BMI categories based on user input."""
     result = requestInput()
     if result is None:
         return
@@ -67,4 +69,6 @@ def main():
     plotBMICategories(bmi)
     plt.yticks([])
     plt.show()
+    
+# Running the main function to execute the BMI calculator program
 main()
