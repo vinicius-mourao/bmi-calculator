@@ -1,9 +1,12 @@
+# importing the necessary library for plotting
 import matplotlib.pyplot as plt
 
+# Creating function to calculate BMI
 def bmiCalculator(weight, height):
     bmi = weight / (height ** 2)
     return bmi
 
+# Creating function to determine BMI category based on calculated BMI
 def bmiCategory(bmi):
     if bmi < 18.5:
         return "Underweight"
@@ -19,6 +22,7 @@ def bmiCategory(bmi):
         return "Obesity Class III"
     else: return "Invalid BMI"
 
+# Creating function to plot BMI categories and indicate user's BMI on the graph
 def plotBMICategories(bmi):
     plt.axvspan(0, 18.5, 0.0, 1.0, color='blue', alpha=0.5, label='Underweight')
     plt.axvspan(18.5, 25, 0.0, 1.0, color='green', alpha=0.5, label='Normal weight')
@@ -31,6 +35,8 @@ def plotBMICategories(bmi):
     plt.axvline(x = bmi, color = 'black', linestyle = '--', label='Your BMI')
     plt.legend()
 
+
+# Creating function to request user input for weight and height, with error handling for invalid inputs and ensuring that weight and height are positive numbers. Also, if height is entered in centimeters, it converts it to meters.
 def requestInput():
     print("Welcome to the BMI Calculator!")
     try: 
@@ -48,7 +54,7 @@ def requestInput():
 
 
 
-
+# Creating and running main function to execute the BMI calculation, category determination, and plotting of BMI categories based on user input.
 def main():
     result = requestInput()
     if result is None:
