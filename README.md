@@ -12,4 +12,4 @@ A python command-line tool that calculates BMI (Body Mass Index) for adults base
 - Matplotlib
 
 ## How to run
-python calculadora-imc.py
+python bmi_calculator.py
